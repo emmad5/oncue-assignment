@@ -2,7 +2,7 @@
 #
 # Table name: trucks
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  name       :string           not null
 #  start_time :time             not null
 #  end_time   :time             not null

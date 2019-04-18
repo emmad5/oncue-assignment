@@ -2,7 +2,7 @@
 #
 # Table name: trucks
 #
-#  id         :integer          not null, primary key
+#  id         :bigint(8)        not null, primary key
 #  name       :string           not null
 #  start_time :time             not null
 #  end_time   :time             not null
@@ -12,4 +12,5 @@
 
 class Truck < ApplicationRecord
   validates :name, :start_time, :end_time, presence: true
+  has_many :jobs, dependent: :destroy
 end

@@ -1,5 +1,6 @@
 import React from 'react';
 import TruckList from './truck_index';
+import TruckForm from './truck_form';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Oncue Assignment</h1>
+        <TruckForm />
         <TruckList />
       </div>
     )

@@ -1,4 +1,4 @@
-class TrucksController < ApplicationController
+class Api::TrucksController < ApplicationController
 
   def create
     @truck = Truck.new(truck_params)

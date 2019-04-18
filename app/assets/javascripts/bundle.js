@@ -99,6 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _truck_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./truck_index */ "./frontend/components/truck_index.jsx");
 /* harmony import */ var _truck_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./truck_form */ "./frontend/components/truck_form.jsx");
+/* harmony import */ var _job_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./job_form */ "./frontend/components/job_form.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -116,6 +117,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -135,7 +137,7 @@ function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Oncue Assignment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_truck_form__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_truck_index__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Oncue Assignment"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_truck_form__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_job_form__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_truck_index__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
@@ -143,6 +145,117 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./frontend/components/job_form.jsx":
+/*!******************************************!*\
+  !*** ./frontend/components/job_form.jsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_job_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/job_api_util */ "./frontend/util/job_api_util.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var JobForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(JobForm, _React$Component);
+
+  function JobForm(props) {
+    var _this;
+
+    _classCallCheck(this, JobForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(JobForm).call(this, props));
+    _this.state = {
+      name: '',
+      start_time: '',
+      estimated_end_time: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(JobForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      console.log(this.state);
+      e.preventDefault();
+      var jobparams = Object.assign({}, this.state);
+      Object(_util_job_api_util__WEBPACK_IMPORTED_MODULE_1__["createJob"])(jobparams);
+    }
+  }, {
+    key: "update",
+    value: function update(property) {
+      var _this2 = this;
+
+      console.log(this.state);
+      return function (e) {
+        return _this2.setState(_defineProperty({}, property, e.target.value));
+      };
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$state = this.state,
+          name = _this$state.name,
+          start_time = _this$state.start_time,
+          estimated_end_time = _this$state.estimated_end_time;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Job Form"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit
+      }, "Customer Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: name,
+        onChange: this.update('name')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Start Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "time",
+        value: start_time,
+        onChange: this.update('start_time')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Estimated End Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "time",
+        value: estimated_end_time,
+        onChange: this.update('end_time')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "Submit"
+      })));
+    }
+  }]);
+
+  return JobForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (JobForm);
 
 /***/ }),
 
@@ -157,7 +270,10 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_truck_api_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/truck_api_util */ "./frontend/util/truck_api_util.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -167,13 +283,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -183,9 +300,18 @@ function (_React$Component) {
   _inherits(TruckForm, _React$Component);
 
   function TruckForm(props) {
+    var _this;
+
     _classCallCheck(this, TruckForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TruckForm).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TruckForm).call(this, props));
+    _this.state = {
+      name: '',
+      start_time: '',
+      end_time: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(TruckForm, [{
@@ -194,25 +320,43 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      console.log(this.state);
       e.preventDefault();
+      var truckparams = Object.assign({}, this.state);
+      Object(_util_truck_api_util__WEBPACK_IMPORTED_MODULE_1__["createTruck"])(truckparams);
+    }
+  }, {
+    key: "update",
+    value: function update(property) {
+      var _this2 = this;
+
+      console.log(this.state);
+      return function (e) {
+        return _this2.setState(_defineProperty({}, property, e.target.value));
+      };
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Truck Form", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      var _this$state = this.state,
+          name = _this$state.name,
+          start_time = _this$state.start_time,
+          end_time = _this$state.end_time;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Truck Form"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "string",
-        placeholder: "Name"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        value: name,
+        onChange: this.update('name')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Start Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
-        name: "Start",
-        id: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        value: start_time,
+        onChange: this.update('start_time')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "End Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
-        name: "End",
-        id: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        value: end_time,
+        onChange: this.update('end_time')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Submit"
       })));
@@ -248,9 +392,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -265,35 +409,47 @@ function (_React$Component) {
   _inherits(TruckList, _React$Component);
 
   function TruckList(props) {
+    var _this;
+
     _classCallCheck(this, TruckList);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(TruckList).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TruckList).call(this, props));
+    _this.parseTime = _this.parseTime.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(TruckList, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this = this;
+      var _this2 = this;
 
       Object(_util_truck_api_util__WEBPACK_IMPORTED_MODULE_1__["fetchTrucks"])().then(function (trucks) {
-        _this.setState({
+        _this2.setState({
           trucks: trucks
         });
       });
     }
   }, {
+    key: "parseTime",
+    value: function parseTime(time) {
+      return time.split('T')[1].split('.')[0];
+    }
+  }, {
     key: "renderTrucks",
     value: function renderTrucks() {
+      var _this3 = this;
+
       if (!this.state) return '';
-      console.log(this.state.trucks);
       return Object.values(this.state.trucks).map(function (truck) {
-        return truck.name;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: truck.id
+        }, truck.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "start time: ", _this3.parseTime(truck.start_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "end time: ", _this3.parseTime(truck.end_time));
       });
     }
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "All trucks"), this.renderTrucks());
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "All trucks"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.renderTrucks()));
     }
   }]);
 
@@ -328,20 +484,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
+/***/ "./frontend/util/job_api_util.js":
+/*!***************************************!*\
+  !*** ./frontend/util/job_api_util.js ***!
+  \***************************************/
+/*! exports provided: createJob */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createJob", function() { return createJob; });
+var createJob = function createJob(job) {
+  return $.ajax({
+    method: "POST",
+    url: "api/jobs",
+    data: {
+      job: job
+    }
+  });
+};
+
+/***/ }),
+
 /***/ "./frontend/util/truck_api_util.js":
 /*!*****************************************!*\
   !*** ./frontend/util/truck_api_util.js ***!
   \*****************************************/
-/*! exports provided: fetchTrucks */
+/*! exports provided: fetchTrucks, createTruck */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchTrucks", function() { return fetchTrucks; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createTruck", function() { return createTruck; });
 var fetchTrucks = function fetchTrucks() {
   return $.ajax({
     method: "GET",
     url: "api/trucks"
+  });
+};
+var createTruck = function createTruck(truck) {
+  return $.ajax({
+    method: "POST",
+    url: "api/trucks",
+    data: {
+      truck: truck
+    }
   });
 };
 

@@ -5,6 +5,7 @@ class TruckList extends React.Component {
   constructor(props) {
     super(props);
     this.parseTime = this.parseTime.bind(this)
+    this.parseJobs = this.parseJobs.bind(this)
   }
 
   componentDidMount() {
@@ -17,6 +18,14 @@ class TruckList extends React.Component {
     return time.split('T')[1].split('.')[0];
   }
 
+  parseJobs(jobs){
+    console.log(jobs)
+    return jobs.map(job => {
+      return job.customer;
+    });
+
+  }
+
   renderTrucks() {
     if (!this.state) return '';
   
@@ -27,6 +36,8 @@ class TruckList extends React.Component {
         start time: {this.parseTime(truck.start_time)}
         <br/>
         end time: {this.parseTime(truck.end_time)}
+        <br/>
+        jobs: {this.parseJobs(truck.jobs)}
     </li>
     ));
   }

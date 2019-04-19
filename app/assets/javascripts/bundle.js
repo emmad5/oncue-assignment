@@ -195,9 +195,10 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(JobForm).call(this, props));
     _this.state = {
-      name: '',
+      customer: '',
       start_time: '',
-      estimated_end_time: ''
+      estimated_end_time: '',
+      date: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -228,15 +229,20 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var _this$state = this.state,
-          name = _this$state.name,
+          customer = _this$state.customer,
           start_time = _this$state.start_time,
-          estimated_end_time = _this$state.estimated_end_time;
+          estimated_end_time = _this$state.estimated_end_time,
+          date = _this$state.date;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Job Form"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
       }, "Customer Name:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: name,
-        onChange: this.update('name')
+        value: customer,
+        onChange: this.update('customer')
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Date:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "date",
+        value: date,
+        onChange: this.update('date')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Start Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
         value: start_time,
@@ -244,7 +250,7 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Estimated End Time:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "time",
         value: estimated_end_time,
-        onChange: this.update('end_time')
+        onChange: this.update('estimated_end_time')
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         value: "Submit"
@@ -415,6 +421,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TruckList).call(this, props));
     _this.parseTime = _this.parseTime.bind(_assertThisInitialized(_this));
+    _this.parseJobs = _this.parseJobs.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -435,6 +442,14 @@ function (_React$Component) {
       return time.split('T')[1].split('.')[0];
     }
   }, {
+    key: "parseJobs",
+    value: function parseJobs(jobs) {
+      console.log(jobs);
+      return jobs.map(function (job) {
+        return job.customer;
+      });
+    }
+  }, {
     key: "renderTrucks",
     value: function renderTrucks() {
       var _this3 = this;
@@ -443,7 +458,7 @@ function (_React$Component) {
       return Object.values(this.state.trucks).map(function (truck) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: truck.id
-        }, truck.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "start time: ", _this3.parseTime(truck.start_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "end time: ", _this3.parseTime(truck.end_time));
+        }, truck.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "start time: ", _this3.parseTime(truck.start_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "end time: ", _this3.parseTime(truck.end_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "jobs: ", _this3.parseJobs(truck.jobs));
       });
     }
   }, {

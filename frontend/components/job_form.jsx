@@ -5,9 +5,10 @@ class JobForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
+      customer: '',
       start_time: '',
-      estimated_end_time: ''
+      estimated_end_time: '',
+      date: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -31,7 +32,7 @@ class JobForm extends React.Component {
   }
 
   render() {
-    const { name, start_time, estimated_end_time } = this.state;
+    const { customer, start_time, estimated_end_time, date } = this.state;
     return (
       <div>
         <h2>Job Form</h2>
@@ -39,8 +40,15 @@ class JobForm extends React.Component {
           Customer Name:
           <input
             type="text"
-            value={name}
-            onChange={this.update('name')}
+            value={customer}
+            onChange={this.update('customer')}
+          />
+          <br />
+          Date:
+          <input
+            type="date"
+            value={date}
+            onChange={this.update('date')}
           />
           <br />
           Start Time:
@@ -54,7 +62,7 @@ class JobForm extends React.Component {
           <input
             type="time"
             value={estimated_end_time}
-            onChange={this.update('end_time')}
+            onChange={this.update('estimated_end_time')}
           />
           <br />
           <input type="submit" value="Submit" />

@@ -7,10 +7,16 @@ class Api::JobsController < ApplicationController
       if truck.jobs.length == 0
         @job.truck_id = truck.id
         break
-        
+      elsif truck.jobs.all? {|job| job.date != @job.date}
+        @job.truck_id = truck.id
+        break
+      else
+        truck.jobs.each do |job|
+          next if job.date != @job.date
+          
+        end
       end
     end
-    debugger
     if @job.save
       render 'api/trucks/index'
     else

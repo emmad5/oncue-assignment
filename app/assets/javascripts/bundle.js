@@ -326,7 +326,6 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      console.log(this.state);
       e.preventDefault();
       var truckparams = Object.assign({}, this.state);
       Object(_util_truck_api_util__WEBPACK_IMPORTED_MODULE_1__["createTruck"])(truckparams);
@@ -336,7 +335,6 @@ function (_React$Component) {
     value: function update(property) {
       var _this2 = this;
 
-      console.log(this.state);
       return function (e) {
         return _this2.setState(_defineProperty({}, property, e.target.value));
       };
@@ -444,9 +442,10 @@ function (_React$Component) {
   }, {
     key: "parseJobs",
     value: function parseJobs(jobs) {
-      console.log(jobs);
       return jobs.map(function (job) {
-        return job.customer;
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: job.id
+        }, "customer: ", job.customer, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "date: ", job.date);
       });
     }
   }, {
@@ -458,7 +457,7 @@ function (_React$Component) {
       return Object.values(this.state.trucks).map(function (truck) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           key: truck.id
-        }, truck.name, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "start time: ", _this3.parseTime(truck.start_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "end time: ", _this3.parseTime(truck.end_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "jobs: ", _this3.parseJobs(truck.jobs));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, truck.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Start Time:"), " ", _this3.parseTime(truck.start_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "End Time:"), " ", _this3.parseTime(truck.end_time), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Jobs:"), " ", _this3.parseJobs(truck.jobs));
       });
     }
   }, {

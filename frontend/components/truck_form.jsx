@@ -16,14 +16,12 @@ class TruckForm extends React.Component {
 
   }
   handleSubmit(e) {
-    console.log(this.state)
     e.preventDefault();
     const truckparams = Object.assign({}, this.state);
     createTruck(truckparams);
   }
 
   update(property) {
-    console.log(this.state)
     return e => this.setState({
       [property]: e.target.value
     });

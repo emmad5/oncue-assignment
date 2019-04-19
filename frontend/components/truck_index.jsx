@@ -19,9 +19,14 @@ class TruckList extends React.Component {
   }
 
   parseJobs(jobs){
-    console.log(jobs)
     return jobs.map(job => {
-      return job.customer;
+      return (
+        <div key={job.id}>
+          customer: {job.customer}
+          <br/>
+          date: {job.date}
+        </div>
+      );
     });
 
   }
@@ -31,13 +36,13 @@ class TruckList extends React.Component {
   
     return Object.values(this.state.trucks).map(truck => (
     <li key={truck.id}>
-      {truck.name}
+        <h2>{truck.name}</h2>
         <br />
-        start time: {this.parseTime(truck.start_time)}
+        <h3>Start Time:</h3> {this.parseTime(truck.start_time)}
         <br/>
-        end time: {this.parseTime(truck.end_time)}
+        <h3>End Time:</h3> {this.parseTime(truck.end_time)}
         <br/>
-        jobs: {this.parseJobs(truck.jobs)}
+        <h3>Jobs:</h3> {this.parseJobs(truck.jobs)}
     </li>
     ));
   }
